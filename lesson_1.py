@@ -16,5 +16,8 @@ print(car_honda.color)
 car_bmw = Car("black","bmw")
 car_bmw.driving_at(67)
 car_bmw.driving_with("mercedes")
+car_bmw.driving_with("benz")
+
+
 car_bmw.color = "white"
 print(car_bmw.color,car_bmw.model)

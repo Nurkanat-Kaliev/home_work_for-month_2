@@ -1,3 +1,6 @@
+from logging import setLogRecordFactory
+
+
 class Car:
 
     def __init__(self,color,model):
@@ -12,12 +15,25 @@ class Car:
 car_honda = Car("silver","honda")
 
 print(car_honda.color)
-
 car_bmw = Car("black","bmw")
 car_bmw.driving_at(67)
 car_bmw.driving_with("mercedes")
 car_bmw.driving_with("benz")
-
-
 car_bmw.color = "white"
 print(car_bmw.color,car_bmw.model)
+
+
+class Person:
+    def __init__(self,name,salary,occupation):
+        self.name = name
+        self.salary = salary
+        self.job = occupation
+
+    def names(self,surname):
+        print(f"The driver name: {surname}")
+
+identity = Person("Price",20000,"Back_dev")
+identity.names("MccTavish")
+print(identity.name,identity.salary)
+
+

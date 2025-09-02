@@ -1,4 +1,3 @@
-from logging import setLogRecordFactory
 
 
 class Car:

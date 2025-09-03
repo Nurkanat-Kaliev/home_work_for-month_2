@@ -33,6 +33,10 @@ class Person:
 
 identity = Person("Price",20000,"Back_dev")
 identity.names("MccTavish")
+identity2 = Person("Soup",90000,"Frontedn dev")
 print(identity.name,identity.salary)
+print(identity2.name)
 
+
+ 
 

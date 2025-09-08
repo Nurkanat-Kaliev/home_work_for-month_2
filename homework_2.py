@@ -10,7 +10,7 @@ class Person:
 class Classmate(Person):
     def __init__(self,name,birth_date,occupation):
         super().__init__(self,name,birth_date,occupation)
-laaaaaaaxyyyyyyyyyyg
+
     def introduce(self):
         print(f"Hello! I'm {self.name}'s {self.name}")
 

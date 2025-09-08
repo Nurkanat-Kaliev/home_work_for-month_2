@@ -2,3 +2,7 @@ lesson_1.py
 lesson 2.py
 for_practicing.py
 .idea
+.venv/
+venv/
+.env/
+__pycache__/

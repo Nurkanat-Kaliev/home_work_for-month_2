@@ -9,7 +9,7 @@ class Person:
         print(f"Name: {self.name} \n"
               f"Occupation: {self.occupation} \n"
               f"Born in {self.birth_date} \n"
-              f"Higher education: {self.higher_edu}")
+              f"Higher education: {self.higher_edu}\n")
 
 class Classmate(Person):
     def __init__(self,name,birth_date,occupation,higher_edu,group_name):
@@ -36,12 +36,13 @@ class Friend(Person):
               f"My hobby is {self.hobby}\n"
               f"Higher education: {self.higher_edu}\n")
 
+person = Person("Kanat","03.08.200","Data scientist",True)
 classmate_1 = Classmate("Bektur", "5.12.2000", "Backend dev", True,"11-D")
 classmate_2 = Classmate("Arstan", "9.11.2000", "Game dev", True,"11-D")
 friend_1 = Friend("Turan", "27.11.2000", "Entrepreneur", False, "Wrestling")
 friend_2 = Friend("Umut", "05.05.2000", "Data scientist", True, "football")
 
-data = [classmate_1,classmate_2,friend_1,friend_2]
+data = [person,classmate_1,classmate_2,friend_1,friend_2]
 
 for char in data:
     char.introduce()

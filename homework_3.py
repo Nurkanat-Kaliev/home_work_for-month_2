@@ -2,14 +2,23 @@ class Person:
     def __init__(self,name,birth_date,occupation,higher_edu):
         self.name = name
         self.birth_date = birth_date
-        self.occupation = occupation
-        self.higher_edu = higher_edu
+        self.__occupation = occupation
+        self.__higher_edu = higher_edu
+
+    @property
+    def get_occupation(self):
+        return self.__occupation
+
+    @property
+    def get_edu(self):
+        return self.__higher_edu
 
     def introduce(self):
-        print(f"Name: {self.name} \n"
-              f"Occupation: {self.occupation} \n"
-              f"Born in {self.birth_date} \n"
-              f"Higher education: {self.higher_edu}\n")
+        education = "есть высшее образование" if self.__higher_edu else "нет высшего образования"
+        print(f"Hello I'm {self.name} \n"
+              f"I was born in {self.birth_date}\n"
+              f"I work as a {self.get_occupation}\n"
+              f"Higher education: {education}\n")
 
 class Classmate(Person):
     def __init__(self,name,birth_date,occupation,higher_edu,group_name):
@@ -17,11 +26,12 @@ class Classmate(Person):
         self.group_name = group_name
 
     def introduce(self):
+        education = "есть высшее образование" if self.get_edu else "нет высшего образования"
         print(f"Hello I'm {self.name} \n"
               f"Also Kanat's classmate we studied in {self.group_name}\n"
               f"I was born in {self.birth_date}\n"
-              f"I work as a {self.occupation}\n"
-              f"Higher education: {self.higher_edu}\n")
+              f"I work as a {self.get_occupation}\n"
+              f"Higher education: {education}\n")
 
 class Friend(Person):
     def __init__(self,name,birth_date,occupation,higher_edu,hobby):
@@ -29,14 +39,15 @@ class Friend(Person):
         self.hobby = hobby
 
     def introduce(self):
+        education = "есть высшее образование" if self.get_edu else "нет высшего образования"
         print(f"Hello I'm {self.name} \n"
               f"Also Kanat's friend \n"
               f"I was born in {self.birth_date}\n"
-              f"I work as a {self.occupation}\n"
+              f"I work as a {self.get_occupation}\n"
               f"My hobby is {self.hobby}\n"
-              f"Higher education: {self.higher_edu}\n")
+              f"Higher education: {education}\n")
 
-person = Person("Kanat","03.08.200","Data scientist",True)
+person = Person("Kanat","03.08.2000","Data scientist",True)
 classmate_1 = Classmate("Bektur", "5.12.2000", "Backend dev", True,"11-D")
 classmate_2 = Classmate("Arstan", "9.11.2000", "Game dev", True,"11-D")
 friend_1 = Friend("Turan", "27.11.2000", "Entrepreneur", False, "Wrestling")

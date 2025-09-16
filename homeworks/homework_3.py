@@ -3,7 +3,6 @@ import datetime
 class Person:
     def __init__(self, name, birth_date, occupation, higher_edu):
         self.name = name
-        # преобразуем строку "дд.мм.гггг" в дату
         self.__birth_date = datetime.datetime.strptime(birth_date, "%d.%m.%Y").date()
         self.__occupation = occupation
         self.__higher_edu = higher_edu
@@ -15,9 +14,7 @@ class Person:
     @property
     def age(self):
         today = datetime.date.today()
-        # считаем возраст по годам
         years = today.year - self.__birth_date.year
-        # проверяем, был ли день рождения уже в этом году
         if (today.month, today.day) < (self.__birth_date.month, self.__birth_date.day):
             years -= 1
         return years

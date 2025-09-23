@@ -59,8 +59,8 @@ def allowed():
 @check_admin(alien)
 def not_allowed():
     print("U cant go")
-
-allowed()
-not_allowed()
+#
+# allowed()
+# not_allowed()
 
 

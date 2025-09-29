@@ -44,7 +44,7 @@ def add_grade(subject, grade, userid):
     connect.commit()
     print('Оценка добавлена!!')
 
-add_grade("Алгебра", 5, 99)
+add_grade("Алгебра", 5, 2)
 add_grade("Алгебра", 5, 1)
 
 
@@ -76,11 +76,11 @@ def create_view_test():
     CREATE VIEW IF NOT EXISTS views_test AS
     SELECT name ,age,subject,grade
     FROM users LEFT JOIN grades ON users.user_id = grades.userid
-    WHERE age = 25
+    WHERE grade = 5
     ''')
     print("View created")
 
-# create_view_test()
+create_view_test()
 
 def get_users_subj():
     cursor.execute("SELECT * FROM views_test")
